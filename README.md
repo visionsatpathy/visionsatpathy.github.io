@@ -1,154 +1,172 @@
 # visionsatpathy.github.io
 
-If you care about pushing the limits of imaging — higher resolution, deeper penetration, better SNR, and faster acquisition — you’re in the right place.
+## Imaging Beyond the Apparent  
+### Separating what moves from what matters.
+
+If you care about pushing the limits of imaging —  
+higher resolution, deeper penetration, better SNR, faster acquisition —  
+you’re in the right place.
+
+But this page is not about incremental improvements.
+
+It is about understanding what an imaging system is *actually* measuring.
 
 ---
 
-## What This Page Is About
+## 🔍 The Core Question
 
-Imaging systems do not fail because of hardware alone.  
-They fail because we misunderstand their limits.
+When light interacts with matter, what are we truly detecting?
 
-This page is dedicated to exploring:
+- Structure?
+- Motion?
+- Elasticity?
+- Scattering?
+- Or artifacts of our own reconstruction models?
 
-- The **true limits of optical and computational resolution**
-- The separation of **bulk motion vs intrinsic elastic response**
-- Reconstruction beyond conventional assumptions
-- Scattering-aware forward models
-- Phase-sensitive detection in elastography
-- The mathematics behind imaging — not just the implementation
+Most imaging systems mix these together.
 
-If you’re interested in improving imaging systems at the level of physics, signal processing, and reconstruction theory — not just applying deep learning blindly — this space is for you.
+This work focuses on **separating them.**
 
 ---
 
-## Core Research Themes
+## 🧩 Theme 1 — Resolution Is Not What You Think
 
-### 1. Optical Coherence Elastography (OCE)
+Optical resolution ≠ Reconstruction resolution.
 
-- Phase-sensitive motion detection
-- Bulk motion removal under translation, rotation, bending, and vibration
-- Universal elastographic profiling frameworks
-- Elastic resolution vs optical resolution
-- Low-frequency excitation (~10 Hz regime)
-- Millipascal-scale modulus estimation challenges
+Hardware defines one limit.  
+Mathematics defines another.  
+Physics defines the real one.
 
----
+This space explores:
 
-### 2. Reconstruction Resolution vs Optical Resolution
-
-Understanding that:
-
-- Optical resolution is hardware-defined  
-- Reconstruction resolution is model-defined  
-
-This page explores:
-
-- Indirect vs direct imaging methods  
-- Scattering-aware reconstruction  
-- Tomographic inversion strategies  
-- Resolution limits in microscopy, spectroscopy, and tomography  
+- Transform-domain phase extraction (DCT-based approaches)
+- Reconstruction resolution vs optical resolution
+- Model-aware inversion
+- Elastic resolution in phase-sensitive systems
+- Depth limits under realistic scattering
 
 ---
 
-### 3. Scattering Models and Depth Limits
+## 🌊 Theme 2 — Motion vs Mechanics
 
-Can better scattering models:
+In Optical Coherence Elastography:
 
-- Extend imaging depth?
-- Improve reconstruction stability?
-- Increase effective SNR?
-- Enhance elastic contrast sensitivity?
+Bulk motion contaminates elastic signals.
 
-We explore forward models beyond simplistic assumptions.
+Translation, rotation, bending, vibration —  
+all masquerade as elasticity.
 
----
+The goal:
 
-### 4. Computational Imaging Without AI Hype
-
-Not every problem needs a neural network.
-
-Focus areas:
-
-- Phase extraction via DCT
-- Optical flow for elastic motion analysis
-- Radiometric modeling
-- Deterministic reconstruction methods
-- Transform-domain signal processing
-
-AI is a tool — not a substitute for physics.
+> Build universal frameworks that separate geometric motion from intrinsic mechanical response.
 
 ---
 
-### 5. Imaging System Architecture
+## 🌫 Theme 3 — Scattering Is Not Noise
 
-Common structure across advanced optical systems:
+Scattering:
 
-1. Source
-2. Beam shaping / relay optics
-3. Gating / modulation strategy
-4. Interaction model
-5. Detector
-6. Reconstruction algorithm
+- Limits depth
+- Alters phase
+- Affects SNR
+- Modifies apparent contrast
 
-The innovation often lies in the coupling between 4 and 6.
+But scattering is also information.
 
----
+The question is not:
+"How do we ignore it?"
 
-## Who This Page Is For
-
-- Researchers in OCT / OCE  
-- Optical system designers  
-- Computational imaging scientists  
-- Signal processing engineers  
-- PhD students working on phase-sensitive systems  
-- Anyone trying to push imaging toward fundamental limits  
-
-If you’re working on:
-
-- Resolution enhancement  
-- Scattering-aware modeling  
-- Depth limit extension  
-- Elastic contrast quantification  
-- Phase-based feature detection  
-
-You will likely find something useful here.
+The question is:
+"How do we model it correctly?"
 
 ---
 
-## Long-Term Vision
+## 🛠 Engineering Meets Physics
 
-To contribute toward imaging systems that:
+Every imaging system follows this pipeline:
 
-- Quantify mechanical properties with precision  
+1. Source  
+2. Optical delivery  
+3. Interaction with matter  
+4. Detection  
+5. Reconstruction  
+
+The true innovation lies between **interaction and reconstruction**.
+
+This page focuses on that junction.
+
+---
+
+## 🚫 Not Just Another AI Page
+
+Deep learning is powerful.
+
+But:
+
+- If the forward model is wrong, AI learns the wrong mapping.
+- If physics is ignored, reconstruction becomes decoration.
+
+This work prioritizes:
+
+- Deterministic modeling
+- Radiometric understanding
+- Phase-sensitive analysis
+- Physics-first computation
+
+AI is a tool — not a shortcut.
+
+---
+
+## 🎯 Who Should Be Here
+
+You might belong here if:
+
+- You think resolution is more than Rayleigh’s criterion.
+- You care about separating bulk motion from elastic deformation.
+- You question depth limits instead of accepting them.
+- You want to improve imaging at the level of physical modeling.
+- You believe serious imaging requires mathematics.
+
+---
+
+## 🚀 Long-Term Direction
+
+To develop imaging systems that:
+
+- Quantify biomechanics reliably  
 - Separate structure from mechanics  
-- Overcome conventional depth limits  
-- Bridge physics, mathematics, and computation  
+- Improve depth without sacrificing resolution  
+- Treat scattering as a modeled variable, not noise  
 
-And possibly — solve problems that have remained untouched not because they are impossible, but because they require deeper thinking.
+Not incremental.
 
----
-
-## Current Work
-
-(You can link your repositories here)
-
-- 🔬 Phase-sensitive OCE frameworks  
-- 📊 Scattering coefficient modeling  
-- 🧠 Optical flow–based motion separation  
-- 📐 Reconstruction resolution analysis  
-- 🧮 Transform-domain phase extraction  
+Fundamental.
 
 ---
 
-## Let’s Collaborate
+## 📂 Work in Progress
 
-If you're serious about advancing imaging physics —  
-and not just publishing incremental improvements —  
-reach out.
+- Phase-sensitive OCE frameworks  
+- Universal bulk motion removal algorithms  
+- Optical flow–based deformation separation  
+- Scattering-aware reconstruction modeling  
+- Transform-domain phase extraction methods  
 
 ---
 
-*Imaging is not about seeing more pixels.  
-It is about understanding what the light is truly telling you.*
+## 🤝 Collaboration
 
+If you are working on:
+
+- OCT / OCE
+- Computational imaging
+- Inverse problems
+- Scattering physics
+- Resolution theory
+
+Let’s talk.
+
+---
+
+> Imaging is not about seeing deeper.  
+> It is about understanding better.
