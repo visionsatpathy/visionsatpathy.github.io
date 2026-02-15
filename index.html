@@ -13,13 +13,16 @@
 
         /* HERO SECTION */
         .hero {
-            position: relative;
-            height: 80vh;
-            background: url('hero.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    position: relative;
+    height: 80vh;
+    background: url('hero.jpg') center no-repeat;
+    background-size: contain;   /* This makes the whole image visible */
+    background-color: #000;     /* Fills empty space if aspect ratio differs */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
         /* Dark overlay */
         .hero::before {
