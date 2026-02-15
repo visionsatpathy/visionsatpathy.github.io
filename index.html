@@ -15,7 +15,7 @@ body {
 }
 
 .hero {
-    padding: 120px 20px 60px 20px;
+    padding: 100px 20px 40px 20px;
 }
 
 h1 {
@@ -24,35 +24,49 @@ h1 {
 }
 
 p {
-    font-size: 1.2em;
-    max-width: 700px;
+    max-width: 800px;
     margin: auto;
+    font-size: 1.2em;
 }
 
-.button-container {
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+.selector-section {
+    margin-top: 60px;
 }
 
-.button {
-    padding: 20px 40px;
-    font-size: 1.1em;
+select {
+    padding: 12px;
+    margin: 15px;
+    font-size: 1em;
+    border-radius: 6px;
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #ffffff;
+    width: 260px;
+}
+
+button {
+    padding: 14px 30px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
     color: #203a43;
     font-weight: bold;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.button:hover {
+button:hover {
     background-color: #00d4ff;
-    color: black;
-    transform: translateY(-5px);
+    transform: translateY(-3px);
+}
+
+.result-box {
+    margin-top: 40px;
+    padding: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
 }
 </style>
 </head>
@@ -62,24 +76,76 @@ p {
 <div class="hero">
     <h1>Imaging Beyond the Apparent</h1>
     <p>
-    Pushing the limits of photon interaction, reconstruction physics,
-    and temporal measurement in advanced imaging systems.
+        Choose the physical constraints of your system.
+        Imaging physics changes with thickness and invasiveness.
     </p>
 
-    <div class="button-container">
-        <button class="button" onclick="location.href='photon-scattering.html'">
-            Photon Scattering Reconstruction
-        </button>
+    <div class="selector-section">
 
-        <button class="button" onclick="location.href='reconstruction-resolution.html'">
-            Reconstruction Resolution
-        </button>
+        <!-- Dropdown 1 -->
+        <select id="thickness">
+            <option value="">Select Sample Thickness</option>
+            <option value="thin">Less than 5 mm</option>
+            <option value="medium">Between 1 cm – 5 cm</option>
+            <option value="full">Full Body</option>
+        </select>
 
-        <button class="button" onclick="location.href='temporal-resolution.html'">
-            Temporal Resolution
-        </button>
+        <!-- Dropdown 2 -->
+        <select id="mode">
+            <option value="">Mode of Imaging</option>
+            <option value="invasive">Invasive (optical clearing, labeling)</option>
+            <option value="noninvasive">Non-invasive</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="analyzeImaging()">Analyze Imaging Strategy</button>
+
     </div>
+
+    <div id="result" class="result-box" style="display:none;"></div>
+
 </div>
+
+<script>
+function analyzeImaging() {
+
+    var thickness = document.getElementById("thickness").value;
+    var mode = document.getElementById("mode").value;
+    var resultBox = document.getElementById("result");
+
+    if(thickness === "" || mode === "") {
+        resultBox.style.display = "block";
+        resultBox.innerHTML = "Please select both parameters.";
+        return;
+    }
+
+    var output = "<h2>Imaging Constraints Analysis</h2>";
+
+    if(thickness === "thin") {
+        output += "<p><b>Thin sample regime:</b> High-resolution optical methods are feasible. Scattering is moderate and phase-sensitive techniques are viable.</p>";
+    }
+
+    if(thickness === "medium") {
+        output += "<p><b>Intermediate thickness regime:</b> Scattering becomes dominant. Reconstruction modeling and depth correction strategies are critical.</p>";
+    }
+
+    if(thickness === "full") {
+        output += "<p><b>Full body regime:</b> Optical penetration is severely limited. Hybrid modalities or multi-physics approaches are required.</p>";
+    }
+
+    if(mode === "invasive") {
+        output += "<p><b>Invasive mode:</b> Optical clearing or labeling enhances contrast and depth but modifies intrinsic tissue properties.</p>";
+    }
+
+    if(mode === "noninvasive") {
+        output += "<p><b>Non-invasive mode:</b> Contrast relies on intrinsic scattering and phase behavior. SNR and modeling become central.</p>";
+    }
+
+    resultBox.style.display = "block";
+    resultBox.innerHTML = output;
+}
+</script>
 
 </body>
 </html>
