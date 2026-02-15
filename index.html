@@ -7,48 +7,60 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            background-color: #111;
             color: white;
-            text-align: center;
         }
 
-        .header {
-            padding: 40px 20px 10px 20px;
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: url('hero.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Dark overlay */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 2;
         }
 
         .name {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
-        .profile-img {
-            width: 220px;
-            border-radius: 50%;
-            margin-top: 20px;
-            border: 4px solid #00c6ff;
-            box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+        .subtitle {
+            font-size: 22px;
+            margin-top: 15px;
+            max-width: 700px;
         }
 
-        .bio-section {
-            padding: 40px 20px;
-        }
-
-        h1 {
-            font-size: 36px;
-        }
-
-        p {
-            font-size: 20px;
-            max-width: 750px;
-            margin: 20px auto;
-            line-height: 1.6;
+        /* BUTTONS SECTION */
+        .content {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
         }
 
         .button {
             display: inline-block;
             padding: 15px 30px;
-            margin: 15px;
+            margin: 20px;
             font-size: 18px;
             background: #00c6ff;
             color: black;
@@ -73,17 +85,25 @@
         }
     </style>
 </head>
+
 <body>
 
-    <div class="header">
-        <div class="name">Sweta Satpathy</div>
-        <img src="profile.jpg" alt="Sweta Satpathy" class="profile-img">
+    <!-- HERO IMAGE SECTION -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="name">Sweta Satpathy</div>
+            <div class="subtitle">
+                Imaging Techniques — Advancing Resolution, SNR, Speed and Depth
+            </div>
+        </div>
     </div>
 
-    <div class="bio-section">
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
         <h1>Imaging Techniques</h1>
 
-        <p>
+        <p style="max-width:700px; margin:20px auto; font-size:18px;">
             If you are interested in increasing the resolution, SNR, speed and depth of imaging,
             then you are in the right place.
         </p>
@@ -96,6 +116,7 @@
            class="button linkedin">
            Connect on LinkedIn
         </a>
+
     </div>
 
 </body>
