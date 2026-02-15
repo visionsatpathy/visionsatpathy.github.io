@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f2027;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Recommended Imaging Techniques</h1>
+<div id="results"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const thickness = params.get("thickness");
+const mode = params.get("mode");
+const speed = params.get("speed");
+
+const database = {
+"micrometer-invasive-realtime":
+"Confocal Microscopy; Two-Photon Microscopy; Optical Coherence Tomography (needle-based); Intravital Microscopy; Optical Coherence Elastography",
+
+"micrometer-invasive-processing":
+"Electron Microscopy; Super-Resolution Microscopy; Raman Spectroscopy (mapping); Mass Spectrometry Imaging",
+
+"micrometer-noninvasive-realtime":
+"Phase-Contrast Microscopy; Differential Interference Contrast Microscopy; Reflectance Confocal Microscopy; Optical Coherence Microscopy",
+
+"micrometer-noninvasive-processing":
+"Quantitative Phase Imaging; Hyperspectral Imaging (microscopic); Fourier Transform Infrared Spectroscopy (micro-FTIR)",
+
+"mmcm-invasive-realtime":
+"Endoscopic Ultrasound; Intravascular Ultrasound; Photoacoustic Endoscopy; Fluorescence-Guided Surgery",
+
+"mmcm-invasive-processing":
+"Micro-Computed Tomography; Micro-Magnetic Resonance Imaging; Optical Clearing Imaging",
+
+"mmcm-noninvasive-realtime":
+"Ultrasound Imaging; Photoacoustic Imaging; Optical Coherence Tomography; Shear Wave Elastography",
+
+"mmcm-noninvasive-processing":
+"Diffuse Optical Tomography; Electrical Impedance Tomography; Magnetic Resonance Elastography",
+
+"whole-invasive-realtime":
+"Fluoroscopy; Interventional Angiography",
+
+"whole-invasive-processing":
+"Positron Emission Tomography; Single-Photon Emission Computed Tomography; Whole-Body MRI with Contrast",
+
+"whole-noninvasive-realtime":
+"Ultrasound Imaging; Functional MRI; Optoacoustic Imaging",
+
+"whole-noninvasive-processing":
+"Computed Tomography; Magnetic Resonance Imaging; Whole-Body PET-CT"
+};
+
+const key = `${thickness}-${mode}-${speed}`;
+document.getElementById("results").innerHTML = database[key] || "No results found.";
+</script>
+
+<br><br>
+<a href="index.html">⬅ Back to Home</a>
+
+</body>
+</html>
