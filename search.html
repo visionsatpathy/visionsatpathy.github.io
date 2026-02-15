@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imaging Search Engine</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #1c1c1c;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #00c6ff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0072ff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Imaging Technique Search Engine</h1>
+
+<form action="results.html">
+    <h3>Thickness of Sample</h3>
+    <select name="thickness">
+        <option value="micrometer">Micrometer</option>
+        <option value="mmcm">Millimeter–Centimeter</option>
+        <option value="whole">Whole Body</option>
+    </select>
+
+    <h3>Mode of Imaging</h3>
+    <select name="mode">
+        <option value="invasive">Invasive</option>
+        <option value="noninvasive">Non-Invasive</option>
+    </select>
+
+    <h3>Speed</h3>
+    <select name="speed">
+        <option value="realtime">Real-Time</option>
+        <option value="processing">Processing Time</option>
+    </select>
+
+    <br><br>
+    <button type="submit">Search</button>
+</form>
+
+<br><br>
+<a href="index.html">⬅ Back to Home</a>
+
+</body>
+</html>
